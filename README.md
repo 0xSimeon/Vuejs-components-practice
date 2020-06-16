@@ -2,6 +2,8 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/85c86df4-8150-4d2d-aa64-9f11769c056d/deploy-status)](https://app.netlify.com/sites/vuejs-components-practice/deploys)
 
+Live 🚀 https://vuejs-components-practice.netlify.app/
+
 > A Vue.js project
 
 ## Build Setup
