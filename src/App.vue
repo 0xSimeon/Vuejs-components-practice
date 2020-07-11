@@ -1,24 +1,24 @@
 <template>
 	<div class="container">
 		<div class="row">
-			<div class="col-xs-4 col-lg-12">
-				<br />
-				<button @click="selectedComponent = 'appBlue'" class="btn btn-primary">Load Blue Template</button>
-				<button @click="selectedComponent = 'appGreen'" class="btn btn-success">Load Green Template</button>
-				<button @click="selectedComponent = 'appRed'" class="btn btn-danger">Load Red Template</button>
+			<div class="col-lg-12">
+				<br/>
+				<button  @click="selectedComponent = 'appBlue'" class="btn btn-primary">Load Blue Template</button>
+				<button  @click="selectedComponent = 'appGreen'" class="btn btn-success">Load Green Template</button>
+				<button  @click="selectedComponent = 'appRed'" class="btn btn-danger">Load Red Template</button>
 				<hr/>
+                <p>These components are kept alive. <br> Don't believe?  Click the button below, <span :style="{fontWeight: bold}">switch to another template </span> and <u>count</u> would remain!</p>
 
 
                 <p v-if="selectedComponent == 'appBlue'">
-                    Selected Template: Blue
+                    Selected Template: <span class="blue">Blue</span>
                 </p>
-
                 <p v-else-if="selectedComponent == 'appRed'">
-                    Selected Template: Red
+                    Selected Template: <span class="red">Red </span> 
                 </p>
 
                 <p v-else>
-                    Selected Template: Green
+                    Selected Template: <span class="green">Green</span>
                 </p>
                 
 
@@ -26,16 +26,7 @@
                     <component :is="selectedComponent"></component>
                 </keep-alive>
                 
-				<!-- <app-blue>
-					<h2 slot="blue">{{ blue }}</h2>
-				</app-blue>
-				<app-green>
-					<h2 slot="green">{{ green }}</h2>
-				</app-green>
-				<app-red>
-					<h2 slot="red">{{ red }}</h2>
-				</app-red> -->
-
+				
 			</div>
 		</div>
 	</div>
@@ -52,9 +43,11 @@ export default {
             red: 'red template',
             green: 'green template',
             blue: 'blue template',
-            selectedComponent: 'appBlue'
+            selectedComponent: 'appBlue', 
+ 
         }
     },
+    
     components: {
         appBlue: Blue,
         appGreen: Green,
@@ -63,4 +56,30 @@ export default {
 }
 </script>
 
-<style></style>
+<style scoped>
+.blue {
+    color: blue;
+}
+.green {
+    color: green;
+}
+
+.red {
+    color: red; 
+}
+
+button {
+    margin: 10px; 
+}
+
+@media only screen and (max-width: 500px) {
+    button {
+        width: 100%; 
+        margin: 10px 0;
+    }
+}
+
+
+
+
+</style>
