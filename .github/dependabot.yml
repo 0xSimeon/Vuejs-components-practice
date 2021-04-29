@@ -1,0 +1,19 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "04:00"
+    timezone: Africa/Lagos
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: vue-loader
+    versions:
+    - 16.1.2
+  - dependency-name: lodash
+    versions:
+    - 4.17.20
+  - dependency-name: elliptic
+    versions:
+    - 6.5.3
